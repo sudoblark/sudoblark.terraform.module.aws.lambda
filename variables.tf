@@ -52,9 +52,7 @@ For ZIP based lambdas, the following arguments are needed:
 
 For container based lambdas, the following arguments are needed:
 - image_uri             : URI of the image to utilise
-
-Note that for container based lambdas, we ignore the tag/version as promotion to usage is intended via pipelines
-rather than Terraform
+- image_tag             : Version of image to use, defaults to "latest"
 
 OPTIONAL
 ---------
@@ -73,6 +71,7 @@ EOF
     object({
       source_folder        = optional(string, null),
       image_uri            = optional(string, null),
+      image_tag            = optional(string, "latest"),
       name                 = string,
       description          = string,
       handler              = optional(string, null),

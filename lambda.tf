@@ -20,6 +20,7 @@ module "lambdas" {
   lambda_suffix             = each.value["name"]
   lambda_handler            = each.value["handler"]
   image_uri                 = each.value["image_uri"]
+  image_tag                 = each.value["image_tag"]
   lambda_runtime            = each.value["runtime"]
   lambda_local_path         = each.value["local_path"]
   lambda_timeout            = each.value["timeout"]
