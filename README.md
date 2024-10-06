@@ -110,7 +110,7 @@ i.e. you can have one dictionary for ZIP and one for containers, but not ZIP and
 information in the same lambda
 
 For ZIP based lambdas, the following arguments are needed:
-- source_folder         : Which folder under "application" where the zipped lambda (created via pipelines) lives
+- source_folder         : Folder where the zipped lambda lives under src/lambda.zip
 - handler               : file.function reference for the lambda handler, i.e. its entrypoint
 
 For container based lambdas, the following arguments are needed:
