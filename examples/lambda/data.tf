@@ -10,8 +10,6 @@ locals {
   }
 }
 
-data "aws_vpc" "current" {}
-
 # Get current region
 data "aws_region" "current_region" {}
 

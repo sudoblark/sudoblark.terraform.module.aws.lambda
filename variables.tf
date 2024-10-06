@@ -13,11 +13,6 @@ variable "application_name" {
   type        = string
 }
 
-variable "vpc_config" {
-  description = "VPC_ID of the AWS account this is being instantiated in."
-  type        = string
-}
-
 variable "raw_lambdas" {
   description = <<EOF
 

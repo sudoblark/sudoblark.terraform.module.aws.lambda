@@ -26,7 +26,6 @@ module "lambdas" {
   lambda_timeout            = each.value["timeout"]
   lambda_memory             = each.value["memory"]
   lambda_storage            = each.value["storage"]
-  attach_additional_policy  = true
   lambda_security_group_ids = each.value["security_group_ids"]
   lambda_subnet_ids         = each.value["lambda_subnet_ids"]
   iam_policy_json           = each.value["policy_json"]

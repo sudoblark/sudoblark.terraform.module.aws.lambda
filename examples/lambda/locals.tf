@@ -32,9 +32,6 @@ For container based lambdas, the following arguments are needed:
 - image_uri             : URI of the image to utilise
 - image_tag             : Version of image to use, defaults to "latest"
 
-Note that for container based lambdas, we ignore the tag/version as promotion to usage is intended via pipelines
-rather than Terraform
-
 OPTIONAL
 ---------
 - environment_variables : A dictionary of env vars to mount for the lambda at runtime, defaults to an empty dictionary

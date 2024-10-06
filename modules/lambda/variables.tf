@@ -98,12 +98,6 @@ variable "lambda_security_group_ids" {
   default     = null
 }
 
-variable "vpc_id" {
-  description = "ID of the VPC to run the lambda in"
-  type        = string
-  default     = null
-}
-
 variable "environment_variables" {
   description = "A map that defines environment variables for the Lambda Function."
   type        = map(string)
@@ -134,12 +128,6 @@ variable "iam_policy_json" {
   description = "the json to create an additional policy"
   type        = string
   default     = null
-}
-
-variable "attach_additional_policy" {
-  description = "Whether to create an additional policy for the lambda"
-  type        = bool
-  default     = false
 }
 
 variable "create_subscription_filter" {
@@ -178,10 +166,4 @@ variable "destination_on_failure" {
   description = "ARN of resource to notify when an invocation fails."
   type        = string
   default     = null
-}
-
-variable "destination_required" {
-  description = "Boolean to determine if destination is required, required to work around Terraform limitations."
-  type        = bool
-  default     = false
 }
