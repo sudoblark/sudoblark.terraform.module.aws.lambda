@@ -14,24 +14,24 @@ module "lambda" {
   source  = "terraform-aws-modules/lambda/aws"
   version = "7.2.1"
 
-  function_name           = local.actual_lambda_name
-  description             = var.lambda_description
-  handler                 = var.lambda_handler
-  runtime                 = var.lambda_runtime
-  timeout                 = var.lambda_at_edge ? min(var.lambda_timeout, 30) : var.lambda_timeout
-  image_uri               = local.actual_image_url
-  package_type            = var.image_uri != null ? "Image" : (var.lambda_local_path != null || var.s3_existing_package != null) ? "Zip" : null
-  local_existing_package  = var.lambda_local_path
-  memory_size             = var.lambda_memory
-  ephemeral_storage_size  = var.lambda_storage
-  store_on_s3             = false
-  create_package          = false
-  create_role             = true
+  function_name          = local.actual_lambda_name
+  description            = var.lambda_description
+  handler                = var.lambda_handler
+  runtime                = var.lambda_runtime
+  timeout                = var.lambda_at_edge ? min(var.lambda_timeout, 30) : var.lambda_timeout
+  image_uri              = local.actual_image_url
+  package_type           = var.image_uri != null ? "Image" : (var.lambda_local_path != null || var.s3_existing_package != null) ? "Zip" : null
+  local_existing_package = var.lambda_local_path
+  memory_size            = var.lambda_memory
+  ephemeral_storage_size = var.lambda_storage
+  store_on_s3            = false
+  create_package         = false
+  create_role            = true
 
   attach_network_policy = var.attach_network_policy == 1
   attach_tracing_policy = var.attach_tracing_policy == 1
-  attach_policy = true
-  attach_policy_json = var.iam_policy_json
+  attach_policy         = true
+  attach_policy_json    = var.iam_policy_json
 
   vpc_security_group_ids  = var.lambda_security_group_ids
   vpc_subnet_ids          = var.lambda_subnet_ids
