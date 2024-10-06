@@ -18,7 +18,4 @@ module "lambda" {
   application_name = var.application_name
   environment      = var.environment
   raw_lambdas      = local.raw_lambdas
-
-  vpc_config = data.aws_vpc.current.id
-
 }
