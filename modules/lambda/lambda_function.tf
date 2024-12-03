@@ -30,7 +30,7 @@ module "lambda" {
 
   attach_network_policy = var.attach_network_policy == 1
   attach_tracing_policy = var.attach_tracing_policy == 1
-  attach_policy_json    = var.iam_policy_json != null
+  attach_policy_json    = true
   policy_json           = var.iam_policy_json
 
   vpc_security_group_ids  = var.lambda_security_group_ids
